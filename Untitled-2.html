@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOGTOOTH</title>
+    <style>
+        :root {
+            --brand-red: #d71835;
+            --brand-red-dark: #a9002f;
+            --brand-blue: #2aa5d6;
+            --page-bg: #7fe7ff;
+            --light: #fff;
+            --text: #1f1f1f;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background: var(--page-bg);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: var(--text);
+        }
+
+        body.large-text {
+            font-size: 2rem;
+        }
+
+        body.blackwhite {
+            filter: grayscale(100%);
+            background-color: black;
+            color: white;
+        }
+
+        .topbar {
+            padding: 20px 15px 10px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin: 0;
+            color: #333;
+        }
+
+        .brand-mark {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1b1b1b, #4f4f4f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+        }
+
+        .intro {
+            font-size: 1.05rem;
+            margin: 12px auto 8px;
+        }
+
+        .toolbar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 18px auto 20px;
+            padding: 10px;
+        }
+
+        button {
+            margin: 8px;
+            padding: 12px 20px;
+            border: 2px solid white;
+            border-radius: 8px;
+            background: var(--brand-red);
+            color: white;
+            font: inherit;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 3px 0 #8b102c;
+            transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            background: var(--brand-red-dark);
+            box-shadow: 0 5px 0 #8b102c;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            box-shadow: 0 1px 0 #8b102c;
+            transform: translateY(2px);
+        }
+
+        button:focus-visible {
+            outline: 3px solid #ffe066;
+            outline-offset: 3px;
+        }
+
+        .card {
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 12px;
+            background: crimson;
+            color: white;
+        }
+
+        .food-photo {
+            width: 100%;
+            max-width: 500px;
+            height: 280px;
+            margin: 0 auto 10px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: clamp(1.4rem, 3vw, 2.2rem);
+            letter-spacing: 0.04em;
+            border: 3px solid rgba(255,255,255,0.6);
+            box-shadow: inset 0 0 30px rgba(255,255,255,0.12);
+        }
+
+        .pizza { background: linear-gradient(135deg, #ffbf69, #d85b2b); }
+        .soda { background: linear-gradient(135deg, #6ec8ff, #1966d2); }
+
+        .card p {
+            margin: 10px 0 0;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <h1 class="brand"><span class="brand-mark">D</span> DOGTOOTH</h1>
+        <p class="intro">This is a paragraph about food and drinks.</p>
+    </div>
+
+    <div class="toolbar">
+        <button type="button" onclick="toggleBlackWhite()">Toggle Black and White</button>
+        <button type="button" onclick="window.location.href='pepsi.html'">Pepsi</button>
+        <button type="button" onclick="toggleLargeText()">Toggle Large Text</button>
+        <button type="button" onclick="window.location.href='order.html'">Order</button>
+    </div>
+
+    <div class="card">
+        <div class="food-photo pizza">PIZZA</div>
+        <p>Our pizza is tasty and delicious.</p>
+    </div>
+
+    <div class="card">
+        <div class="food-photo soda">SODA</div>
+        <p>Our soda is refreshing and delicious.</p>
+    </div>
+
+    <script>
+        function toggleLargeText() {
+            document.body.classList.toggle('large-text');
+        }
+
+        function toggleBlackWhite() {
+            document.body.classList.toggle('blackwhite');
+        }
+    </script>
+</body>
+</html>
